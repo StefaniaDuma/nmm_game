@@ -1,0 +1,50 @@
+﻿<Window x:Class="nmm_game.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mills" Height="650" Width="550" Background="{x:Null}">
+    <Grid Width="734">
+        <Grid.Background>
+            <ImageBrush ImageSource="/nmm_game;component/Images/2013-05-20%2016.56.39.jpg" />
+        </Grid.Background>
+        <Canvas Height="604" HorizontalAlignment="Left" Name="canvas1" VerticalAlignment="Top" Width="543" >
+            <Rectangle Canvas.Left="63" Canvas.Top="61" Height="402" Name="rectangle1" Stroke="#FFCBD82C" Width="402" Fill="#50000019" />
+            <Rectangle Canvas.Left="130" Canvas.Top="126" Fill="#50000019" Height="268" Name="rectangle2" Stroke="#FFCBD82C" Width="268" />
+            <Rectangle Canvas.Left="194" Canvas.Top="194" Fill="#50000019" Height="135" Name="rectangle3" Stroke="#FFCBD82C" Width="135" />
+               <Border BorderBrush="#FFD9C76B" BorderThickness="0, 0, 1, 0" Canvas.Left="143" Canvas.Top="66" Height="127" Name="border1" Width="120"></Border>
+            <Border BorderBrush="#FFD9C76B" BorderThickness="0, 0, 1, 0" Canvas.Left="143" Canvas.Top="333" Height="127" Name="to" Width="120" />
+            <Border BorderBrush="#FFD9C76B" BorderThickness="0, 0, 0, 1" Canvas.Left="67" Canvas.Top="224" Height="40" Name="border3" Width="122" />
+            <Border BorderBrush="#FFD9C76B" BorderThickness="0, 0, 0, 1" Canvas.Left="334" Canvas.Top="224" Height="40" Name="border4" Width="122" />
+            <Button Content="Play again" Height="84" Name="playAgainButton" Width="171" Canvas.Left="92" Canvas.Top="224" FontSize="27" Opacity="1" Visibility="Visible" FontFamily="Times New Roman" Click="playAgainButton_Click" Foreground="#FFEF3C4E" Background="#FFCADADE" OpacityMask="#E6000000"></Button>
+            <Button Canvas.Left="269" Canvas.Top="224" Content="Cancel" Height="84" Name="cancelButton" Width="171" FontSize="27" FontFamily="Times New Roman" Click="cancelButton_Click" Visibility="Visible" Foreground="#FFEF3C4E" Background="#FFCADADE" OpacityMask="#E6000000" IsCancel="True" />
+            <TextBox TextWrapping="Wrap" AcceptsReturn="True" Background="Transparent" Height="83" Name="warning" Width="398" Foreground="#FFE5D324" FontSize="16" IsReadOnly="True" MaxLength="180" Padding="2" BorderThickness="0" Canvas.Left="67" Canvas.Top="492" />
+            <Label Canvas.Left="92" Canvas.Top="150" Height="43" Name="winnerLabel" Width="347" FontFamily="Times New Roman" FontSize="25" Foreground="#FFD2EB5B" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
+            <Label Canvas.Left="2" Canvas.Top="0" Content="Language" Height="24" Name="langLabel" Width="61" FontFamily="Times New Roman" Foreground="#FFEFCC2B" />
+            <Button Canvas.Left="7" Canvas.Top="21" Height="17" Name="ukButton" Width="23" Click="ukButton_Click" ToolTip="English" Focusable="True">
+                <Button.Background>
+                    <ImageBrush ImageSource="/nmm_game;component/Images/united_kingdom_round_icon_64.png" />
+                </Button.Background>
+                <Button.Content>
+                    <Image Source="/nmm_game;component/Images/united_kingdom_round_icon_64.png" />
+                </Button.Content>
+            </Button>
+            <Button Canvas.Left="33" Canvas.Top="21" Height="17" Name="deButton" Width="23" Click="deButton_Click" ToolTip="Deutsch">
+                <Button.Background>
+                    <ImageBrush ImageSource="/nmm_game;component/Images/germany_round_icon_64.png" />
+                </Button.Background>
+                <Button.Content>
+                    <Image Source="/nmm_game;component/Images/germany_round_icon_64.png" />
+                </Button.Content>
+            </Button>
+            <Button Canvas.Left="57" Canvas.Top="21" Height="17" Name="frButton" Width="23" Click="frButton_Click" ToolTip="Français">
+                <Button.Background>
+                    <ImageBrush ImageSource="/nmm_game;component/Images/france_round_icon_64.png" />
+                </Button.Background>
+                <Button.Content>
+                    <Image Source="/nmm_game;component/Images/france_round_icon_64.png" />
+                </Button.Content>
+            </Button>
+            <Label Canvas.Left="269" Canvas.Top="573" Content="Credit for flag icons to www.freeflagicons.com" Height="26" Name="label2" Width="255" Foreground="#50F2E225" />
+           
+            </Canvas>
+    </Grid>
+</Window>

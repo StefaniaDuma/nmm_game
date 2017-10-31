@@ -1,0 +1,23 @@
+﻿<ResourceDictionary 
+
+      xmlns ="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+
+      xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="windowTitle">Jeu du Moulin</system:String>
+    <system:String x:Key="language">Langue</system:String>
+    <system:String x:Key="blueWon">Malheureusement, vous avez perdu</system:String>
+    <system:String x:Key="redWon">Félicitations! Vous avez gagné</system:String>
+    <system:String x:Key="invalidMove">S'il vous plaît passer à une position valide: voisin en une seule étape.</system:String>
+    <system:String x:Key="blueStoneRemoved">Très bien, vous avez supprimé une pierre bleue!</system:String>
+    <system:String x:Key="redStoneRemoved">L'adversaire a retiré une de vos pierres.</system:String>
+    <system:String x:Key="stoneNotInMill">Veuillez choisir une pierre qui n'est pas dans un moulin!</system:String>
+    <system:String x:Key="red3Phase">Vous avez trois pierres à gauche, donc vous pouvez déplacer n'importe quel endroit libre!</system:String>
+    <system:String x:Key="playAgain">Lire à nouveau</system:String>
+    <system:String x:Key="cancel">Annuler</system:String>
+    <system:String x:Key="draw">Le jeu s'est terminé par un tirage.</system:String>
+    <system:String x:Key="intro">Vous avez 9 pierres rouges à placer sur le tableau.</system:String>
+   
+</ResourceDictionary> 

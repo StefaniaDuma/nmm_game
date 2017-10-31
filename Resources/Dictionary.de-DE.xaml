@@ -1,0 +1,21 @@
+﻿<ResourceDictionary 
+
+      xmlns ="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="windowTitle">Mühle Spiel</system:String>
+    <system:String x:Key="language">Sprache</system:String>
+    <system:String x:Key="blueWon">Sie haben leider verloren :-(</system:String>
+    <system:String x:Key="redWon">Glückwunsch, sie haben gewonnen :-)</system:String>
+    <system:String x:Key="invalidMove">Bitte setzen sie den Spielstein auf eine zulässige, direkt angrenzende Position.</system:String>
+    <system:String x:Key="blueStoneRemoved">Großartig, sie haben einen blauen Spielstein entfernt!</system:String>
+    <system:String x:Key="redStoneRemoved">Der Gegner hat einen ihrer Spielsteine entfernt.</system:String>
+    <system:String x:Key="stoneNotInMill">Bitte wählen sie einen Spielstein aus der sich nicht in einer Mühle befindet!</system:String>
+    <system:String x:Key="red3Phase">Sie haben nur noch drei Spielsteine, daher können sie nun jeden beliebigen Spielstein auf jede freie Position setzen!</system:String>
+    <system:String x:Key="playAgain">Spielen</system:String>
+    <system:String x:Key="cancel">Abbruch</system:String>
+    <system:String x:Key="draw">Das Spiel endet unentschieden.</system:String>
+    <system:String x:Key="intro">Sie können neun rote Steine auf dem Spielfeld platzieren.</system:String>
+
+</ResourceDictionary> 

@@ -1,0 +1,21 @@
+﻿<ResourceDictionary 
+
+      xmlns ="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="windowTitle">Nine Men's Morris Game</system:String>
+    <system:String x:Key="language">Language</system:String>
+    <system:String x:Key="blueWon">Sorry, you lost :-(</system:String>
+    <system:String x:Key="redWon">Congratulations! You won :-)</system:String>
+    <system:String x:Key="invalidMove">Please move to a valid position: one-step neighbour.</system:String>
+    <system:String x:Key="blueStoneRemoved">Great, you removed a blue stone!</system:String>
+    <system:String x:Key="redStoneRemoved">The opponent removed one of your stones.</system:String>
+    <system:String x:Key="stoneNotInMill">Please choose a stone that is not inside a mill!</system:String>
+    <system:String x:Key="red3Phase">You have three stones left, so you can move in any free place any stone!</system:String>
+    <system:String x:Key="playAgain">Play again</system:String>
+    <system:String x:Key="cancel">Cancel</system:String>
+    <system:String x:Key="draw">The game ended in a draw.</system:String>
+    <system:String x:Key="intro">You have 9 red stones to place on the board.</system:String>
+
+</ResourceDictionary> 
