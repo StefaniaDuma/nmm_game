@@ -1,43 +1,47 @@
 # nmm_game
-A Greedy solution to the Nine Men's Morris game
-This is a desktop application for the **Nine Men's Morris game** developed with WPF and C# (with Visual Studio IDE).
+Dies ist eine Desktop-Anwendung für das Spiel **Mühle** (Nine Men's Morris), welch mit WPF und C# (Visual Studio IDE) entwickelt wurde.
 
-## Rules
-Two players move their nine stones on a board with 24 positions. The human plays with red stones and the computer moves blue stones. The human starts the game.
+## Regeln
+Zwei Spieler bewegen ihre Spielsteine auf einem Spielfeld mit 24 Positionen. Der menschliche Spieler spielt mit roten Spielsteinen, der Computergegner bewegt die blauen Spielsteine. Der menschliche Spieler beginnt das Spiel.
+ 
+Das Spiel besteht aus drei Phasen:
+* Phase 1: Die Spieler platzieren abwechselnd ihre Spielsteine auf den freien Positionen des Spielfeldes.
+* Phase 2: Wenn ein Spieler am Zug ist, wählt er einen Spielstein aus und bewegt diesen auf eine freie, angrenzende Position. Durch die Bewegung der Spielsteine können gegnerische Spielsteine geschlagen und vom Spielfeld entfernt werden.
+* Phase 3: Sobald ein Spieler nur noch drei Spielsteine auf dem Spielfeld übrig hat, verändern sich die Bewegungsregeln: Dieser Spieler darf seine Spielsteine auf jede beliebige, freie Position setzen (fliegen).
 
-The game consists of three phases:
-* phase 1: the players places their stones on the board, in any free position
-* phase 2: given that the red player selects one of its stones to move, it can only be moved to a free, neighbour position; the opponent moves also in the same manner
-* phase 3: once a player has three stones left, he can move it on any free position on the board (flying)
-
-The game ends when one of the player has only two stones left or there are no possible movements available for him. After 60 moves accumulated by both players, the game ends in a draw.
+Das Spiel endet, wenn einer der Spieler nur noch zwei Spielsteine übrig hat oder wenn er keine Möglichkeiten mehr hat seine Spielsteine legal zu bewegen. 
+Tritt keine dieser beiden Bedingungen ein, endet das Spiel nach 70 Spielzügen in einem Unentschieden.
 
 ## Implementation
+ 
+Die Anwendung unterstützt folgende Sprachen: Englisch, Deutsch und Französisch. Die Sprachauswahl findet über einen Klick auf den Button mit der entsprechenden Flagge statt.
+ 
+Spielsteine werden graphisch als Ellipsen dargestellt, die entweder rot (menschlicher Spieler) oder blau (Computergegner) gefärbt sind. Freie Positionen sind gelb markiert. 
+Wenn eine Ellipse angeklickt wird, löst dies ein Event aus, welches eine der folgenden Aktionen realisiert:
+* In Phase 1 des Spiels wird ein roter Spielstein auf eine freie Position platziert.
+* In Phase 2 und 3 bedeutet ein Klick auf einen Spielstein, dass dieser Spielstein 
+bewegt werden soll, ein weiterer Klick platziert den Spielstein auf einer Position.
+* Falls der rote Spieler eine Mühle geformt hat, so kann er mit einem Klick einen blauen Spielstein entfernen.
 
-The application supports the following languages: English, German and French. Every language is depicted by a button with a flag. 
+Wenn ein Spieler eine Mühle geformt hat und einen gegnerischen Spielstein zum Entfernen auswählt, überprüft das Programm ob sich der gegnerische Stein in einer Mühle 
+befindet und gibt eine entsprechende Warnung aus. Falls sich alle gegnerischen Spielsteine in einer Mühle befinden sollten, ist es wiederum erlaub sie zu entfernen.
+ 
+Eine *gefährliche Mühle* ist eine unvollständige Mühle, bei der nur noch ein Spielstein fehlt; dies ist in der folgenden Abbildung dargestellt:
+ Eine *gefährliche Mühle* wird hier von den Spielsteinen 22 und 24 gebildet.
+ 
+![Dangerous red mill](https://github.com/StefaniaDuma/nmm_game/blob/master/Images/dangerousMill.png)
 
-Every stone is graphically represented by an Ellipse, that is either colored in Red (human player), Blue (computer player) or Yellow (free position). When an ellipse is clicked an event is fired up
-which deals with one of the following actions:
-* if it's phase 1 of the game, the click means a red stone should be placed
-* if it's phase 2 of the game, a click on a red ellipse means that is the stone to be moved, followed by a second click on a position on the board meaning that the stone will be placed there
-* if red formed a mill, a click on a blue stone means that the opponent stone will be removed
-
-When a player formed a mill and selects one of the opponent's stone for removing, the program checks and gives warning whether the opponent stone is inside
-a mill. In the case when all the opponent's stones are inside mills, the player is allowed to remove a stone inside a mill.
-
-The board is represented in two ways:
-* a bidirectional matrix **a** which can have four possible values:
-  * 0: free position
-  * 1: position occupied by red player
-  * 2: position occupied by blue player
-  * 8: "wall" or position where no player can move
-* a vector of 24 integers which represent the 24 places in the board with available positions to move
-
-A dangerous mill is considered an incomplete mill where one stone is missing, like in the picture below where a dangerous red mill is formed with stones 22 and 24.
-![](https://github.com/StefaniaDuma/nmm_game/blob/master/Images/dangerousMill.png | width=100)
-
-I implemented a Greedy solution to the game where:
-* the first move of the blue player is random
-* if the game is in phase 1 check whether red will soon form a mill (two neighbour red stones) and whether blue will form soon a mill; 
-completing blue mill has preference over blocking formation of red mill because after completing a blue mill, it will remove a red stone 
-that is inside a dangerous/ incomplete red mill)
+Ich habe einen Greedy-Algorithmus genutzt, um den Computerspieler zu realisieren. Der Algorithmus geht nach den folgenden Regeln vor:
+* Der erste Zug des blauen Spielers ist zufällig.
+* Es wird überprüft, ob entweder der rote oder der blaue Spieler dabei sind eine Mühle zu bilden (zwei gleichfarbige angrenzende Spielsteine, 
+die eine gefährliche Mühle bilden).
+* Falls es sowohl eine gefährliche rote als auch eine gefährliche blaue Mühle auf dem Spielfeld gibt, wird die blaue Mühle vervollständigt, statt die gegnerische Mühle zu blockieren, da mit der Vervollständigung der eigenen Mühle ein gegnerischer Spielstein zum Spielfeld entfernt werden darf ; hierbei wird ein roter Stein gewählt, der sich in einer gefährlichen (unvollständigen) Mühle befindet.
+* Falls es keine gefährliche blaue, aber eine gefährliche rote Mühle auf dem Spielfeld gibt, so wird der blaue Spielstein so gesetzt, dass die gegnerische Mühle blockiert wird.
+* Falls es weder eine rote noch eine blaue gefährliche Mühle auf dem Spielfeld gibt, so wird der blaue Spielstein in ein freies, zu einem blauen Spielstein benachbartes, Feld gesetzt um eine gefährliche Mühle aufzubauen.
+* Wenn ein roter Spielstein entfernt wird, wird ein Stein ausgewählt, der sich in einer unvollständigen Mühle oder in der Nähe einer solchen befindet; andernfalls wird ein zufälliger roter Spielstein ausgewählt.
+ 
+Der Vorteil eines Greedy-Algorithmus ist seine geringe Laufzeit, der Computergegner ist in der Lage zügig zu agieren. (Ein Timer sorgt für eine Verzögerung, so dass das menschliche Auge die gegnerischen Spielzüge besser nachverfolgen kann.) Der Nachteil dieses Algorithmus ist die manchmal nicht optimale Wahl von Spielzügen.
+ 
+Die ausführbare Datei für das Programm kann im *bin*-Ordner gefunden werden.
+  
+ 
