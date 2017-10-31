@@ -26,15 +26,13 @@ bewegt werden soll, ein weiterer Klick platziert den Spielstein auf einer Positi
 Wenn ein Spieler eine Mühle geformt hat und einen gegnerischen Spielstein zum Entfernen auswählt, überprüft das Programm ob sich der gegnerische Stein in einer Mühle 
 befindet und gibt eine entsprechende Warnung aus. Falls sich alle gegnerischen Spielsteine in einer Mühle befinden sollten, ist es wiederum erlaub sie zu entfernen.
  
-Eine *gefährliche Mühle* ist eine unvollständige Mühle, bei der nur noch ein Spielstein fehlt; dies ist in der folgenden Abbildung dargestellt:
- Eine *gefährliche Mühle* wird hier von den Spielsteinen 22 und 24 gebildet.
+Eine *gefährliche Mühle* ist eine unvollständige Mühle, bei der nur noch ein Spielstein fehlt; dies ist in der folgenden Abbildung dargestellt: eine *gefährliche Mühle* wird hier von den Spielsteinen 22 und 24 gebildet.
  
 ![Dangerous red mill](https://github.com/StefaniaDuma/nmm_game/blob/master/Images/dangerousMill.png)
 
 Ich habe einen Greedy-Algorithmus genutzt, um den Computerspieler zu realisieren. Der Algorithmus geht nach den folgenden Regeln vor:
 * Der erste Zug des blauen Spielers ist zufällig.
-* Es wird überprüft, ob entweder der rote oder der blaue Spieler dabei sind eine Mühle zu bilden (zwei gleichfarbige angrenzende Spielsteine, 
-die eine gefährliche Mühle bilden).
+* Es wird überprüft, ob entweder der rote oder der blaue Spieler dabei sind eine Mühle zu bilden (zwei gleichfarbige angrenzende Spielsteine, die eine gefährliche Mühle bilden).
 * Falls es sowohl eine gefährliche rote als auch eine gefährliche blaue Mühle auf dem Spielfeld gibt, wird die blaue Mühle vervollständigt, statt die gegnerische Mühle zu blockieren, da mit der Vervollständigung der eigenen Mühle ein gegnerischer Spielstein zum Spielfeld entfernt werden darf ; hierbei wird ein roter Stein gewählt, der sich in einer gefährlichen (unvollständigen) Mühle befindet.
 * Falls es keine gefährliche blaue, aber eine gefährliche rote Mühle auf dem Spielfeld gibt, so wird der blaue Spielstein so gesetzt, dass die gegnerische Mühle blockiert wird.
 * Falls es weder eine rote noch eine blaue gefährliche Mühle auf dem Spielfeld gibt, so wird der blaue Spielstein in ein freies, zu einem blauen Spielstein benachbartes, Feld gesetzt um eine gefährliche Mühle aufzubauen.
@@ -42,6 +40,6 @@ die eine gefährliche Mühle bilden).
  
 Der Vorteil eines Greedy-Algorithmus ist seine geringe Laufzeit, der Computergegner ist in der Lage zügig zu agieren. (Ein Timer sorgt für eine Verzögerung, so dass das menschliche Auge die gegnerischen Spielzüge besser nachverfolgen kann.) Der Nachteil dieses Algorithmus ist die manchmal nicht optimale Wahl von Spielzügen.
  
-Die ausführbare Datei für das Programm kann im *bin*-Ordner gefunden werden.
+Die ausführbare Datei für das Programm kann im *bin/Debug*-Ordner gefunden werden.
   
  
