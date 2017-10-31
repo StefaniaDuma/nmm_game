@@ -26,15 +26,15 @@ When a player formed a mill and selects one of the opponent's stone for removing
 a mill. In the case when all the opponent's stones are inside mills, the player is allowed to remove a stone inside a mill.
 
 The board is represented in two ways:
-- a bidirectional matrix **a** which can have four possible values:
-* 0: free position
-* 1: position occupied by red player
-* 2: position occupied by blue player
-* 8: "wall" or position where no player can move
-- a vector of 24 integers which represent the 24 places in the board with available positions to move
+* a bidirectional matrix **a** which can have four possible values:
+  * 0: free position
+  * 1: position occupied by red player
+  * 2: position occupied by blue player
+  * 8: "wall" or position where no player can move
+* a vector of 24 integers which represent the 24 places in the board with available positions to move
 
 A dangerous mill is considered an incomplete mill where one stone is missing, like in the picture below where a dangerous red mill is formed with stones 22 and 24.
-![Dangerous red mill](https://github.com/StefaniaDuma/nmm_game/Images/dangerousMill.png | width=100)
+![Dangerous red mill](https://github.com/StefaniaDuma/nmm_game/blob/master/Images/dangerousMill.png | width=100)
 
 I implemented a Greedy solution to the game where:
 * the first move of the blue player is random
