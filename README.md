@@ -34,7 +34,7 @@ The board is represented in two ways:
 * a vector of 24 integers which represent the 24 places in the board with available positions to move
 
 A dangerous mill is considered an incomplete mill where one stone is missing, like in the picture below where a dangerous red mill is formed with stones 22 and 24.
-![Dangerous red mill](https://github.com/StefaniaDuma/nmm_game/blob/master/Images/dangerousMill.png | width=100)
+![](https://github.com/StefaniaDuma/nmm_game/blob/master/Images/dangerousMill.png | width=100)
 
 I implemented a Greedy solution to the game where:
 * the first move of the blue player is random
